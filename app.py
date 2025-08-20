@@ -513,8 +513,8 @@ with st.sidebar:
     <div style="text-align: center; padding: 20px 0;">
         <p style="color: rgba(255, 255, 255, 0.6); margin-bottom: 15px;">Connect</p>
         <div style="display: flex; justify-content: center; gap: 15px;">
-            <a href="#" style="color: rgba(255, 255, 255, 0.7); text-decoration: none;">💼</a>
-            <a href="#" style="color: rgba(255, 255, 255, 0.7); text-decoration: none;">📱</a>
+            <a href="https://www.linkedin.com/in/alidar-kuchukov-9bb253207/" style="color: rgba(255, 255, 255, 0.7); text-decoration: none;">💼</a>
+            <a href="https://t.me/Alidar01" style="color: rgba(255, 255, 255, 0.7); text-decoration: none;">📱</a>
             <a href="#" style="color: rgba(255, 255, 255, 0.7); text-decoration: none;">🌐</a>
         </div>
         <p style="color: rgba(255, 255, 255, 0.4); font-size: 0.8rem; margin-top: 15px;">
