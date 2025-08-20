@@ -30,7 +30,7 @@ def load_css():
         }
 
         .stApp {
-            background: linear-gradient(135deg, #2C0A0A 0%, #5C1A1A 50%, #3D1010 100%);
+            background: linear-gradient(135deg, #4A1515 0%, #7A2525 50%, #5A1A1A 100%);
             background-attachment: fixed;
         }
 
@@ -40,15 +40,15 @@ def load_css():
 
         /* Sidebar Styling */
         section[data-testid="stSidebar"] {
-            background: rgba(44, 10, 10, 0.8);
+            background: rgba(74, 21, 21, 0.8);
             backdrop-filter: blur(20px);
-            border-right: 1px solid rgba(255, 100, 100, 0.1);
+            border-right: 1px solid rgba(255, 150, 150, 0.2);
         }
 
         section[data-testid="stSidebar"] .stButton > button {
-            background: rgba(255, 100, 100, 0.05);
+            background: rgba(255, 150, 150, 0.08);
             color: rgba(255, 255, 255, 0.9);
-            border: 1px solid rgba(255, 100, 100, 0.1);
+            border: 1px solid rgba(255, 150, 150, 0.2);
             border-radius: 15px;
             padding: 15px;
             width: 100%;
@@ -58,10 +58,10 @@ def load_css():
         }
 
         section[data-testid="stSidebar"] .stButton > button:hover {
-            background: linear-gradient(135deg, rgba(220, 38, 38, 0.3) 0%, rgba(185, 28, 28, 0.3) 100%);
-            border: 1px solid rgba(255, 100, 100, 0.3);
+            background: linear-gradient(135deg, rgba(248, 113, 113, 0.4) 0%, rgba(239, 68, 68, 0.4) 100%);
+            border: 1px solid rgba(255, 150, 150, 0.4);
             transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.3);
+            box-shadow: 0 5px 15px rgba(248, 113, 113, 0.4);
         }
 
         /* Animated Background */
@@ -72,7 +72,7 @@ def load_css():
             top: 0;
             left: 0;
             z-index: -1;
-            background: linear-gradient(270deg, #2C0A0A, #5C1A1A, #3D1010, #2C0A0A);
+            background: linear-gradient(270deg, #4A1515, #7A2525, #5A1A1A, #4A1515);
             background-size: 800% 800%;
             animation: gradientShift 20s ease infinite;
         }
@@ -85,21 +85,21 @@ def load_css():
 
         /* Glassmorphism Cards */
         .glass-card {
-            background: rgba(255, 100, 100, 0.05);
+            background: rgba(255, 150, 150, 0.08);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-radius: 20px;
-            border: 1px solid rgba(255, 100, 100, 0.1);
+            border: 1px solid rgba(255, 150, 150, 0.15);
             padding: 30px;
             margin: 20px 0;
-            box-shadow: 0 8px 32px 0 rgba(220, 38, 38, 0.37);
+            box-shadow: 0 8px 32px 0 rgba(248, 113, 113, 0.4);
             transition: all 0.3s ease;
         }
 
         .glass-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px 0 rgba(220, 38, 38, 0.5);
-            border: 1px solid rgba(255, 100, 100, 0.2);
+            box-shadow: 0 15px 35px 0 rgba(248, 113, 113, 0.6);
+            border: 1px solid rgba(255, 150, 150, 0.25);
         }
 
         /* Hero Section */
@@ -107,7 +107,7 @@ def load_css():
             font-family: 'Space Grotesk', sans-serif;
             font-size: clamp(3rem, 8vw, 6rem);
             font-weight: 700;
-            background: linear-gradient(135deg, #DC2626 0%, #B91C1C 20%, #F87171 40%, #EF4444 60%, #FCA5A5 80%, #DC2626 100%);
+            background: linear-gradient(135deg, #EF4444 0%, #F87171 20%, #FCA5A5 40%, #FECACA 60%, #FEE2E2 80%, #EF4444 100%);
             background-size: 200% 200%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -137,25 +137,25 @@ def load_css():
 
         /* Metric Cards */
         .metric-card {
-            background: linear-gradient(135deg, rgba(255,100,100,0.1) 0%, rgba(255,100,100,0.05) 100%);
+            background: linear-gradient(135deg, rgba(255,150,150,0.12) 0%, rgba(255,150,150,0.08) 100%);
             backdrop-filter: blur(10px);
             border-radius: 16px;
             padding: 25px;
             text-align: center;
-            border: 1px solid rgba(255, 100, 100, 0.1);
+            border: 1px solid rgba(255, 150, 150, 0.15);
             transition: all 0.3s ease;
         }
 
         .metric-card:hover {
             transform: translateY(-5px) scale(1.02);
-            border: 1px solid rgba(255, 100, 100, 0.3);
-            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+            border: 1px solid rgba(255, 150, 150, 0.3);
+            box-shadow: 0 10px 30px rgba(248, 113, 113, 0.4);
         }
 
         .metric-number {
             font-size: 2.5rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+            background: linear-gradient(135deg, #EF4444 0%, #F87171 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 5px;
@@ -188,18 +188,18 @@ def load_css():
             left: 0;
             width: 100px;
             height: 3px;
-            background: linear-gradient(90deg, #DC2626 0%, #B91C1C 100%);
+            background: linear-gradient(90deg, #EF4444 0%, #F87171 100%);
             border-radius: 2px;
         }
 
         /* Achievement Cards */
         .achievement-card {
-            background: rgba(255, 100, 100, 0.03);
+            background: rgba(255, 150, 150, 0.06);
             backdrop-filter: blur(10px);
             border-radius: 16px;
             padding: 25px;
             margin-bottom: 20px;
-            border: 1px solid rgba(255, 100, 100, 0.1);
+            border: 1px solid rgba(255, 150, 150, 0.12);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -212,7 +212,7 @@ def load_css():
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,100,100,0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,150,150,0.15), transparent);
             transition: left 0.5s ease;
         }
 
@@ -222,15 +222,15 @@ def load_css():
 
         .achievement-card:hover {
             transform: translateX(5px);
-            border: 1px solid rgba(255, 100, 100, 0.2);
-            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.3);
+            border: 1px solid rgba(255, 150, 150, 0.25);
+            box-shadow: 0 5px 20px rgba(248, 113, 113, 0.4);
         }
 
         /* Skills Grid */
         .skill-tag {
-            background: rgba(255, 100, 100, 0.05);
+            background: rgba(255, 150, 150, 0.08);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 100, 100, 0.1);
+            border: 1px solid rgba(255, 150, 150, 0.15);
             color: rgba(255, 255, 255, 0.9);
             padding: 12px 20px;
             border-radius: 25px;
@@ -243,10 +243,10 @@ def load_css():
         }
 
         .skill-tag:hover {
-            background: linear-gradient(135deg, rgba(220, 38, 38, 0.2) 0%, rgba(185, 28, 28, 0.2) 100%);
+            background: linear-gradient(135deg, rgba(248, 113, 113, 0.25) 0%, rgba(239, 68, 68, 0.25) 100%);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.3);
-            border: 1px solid rgba(255, 100, 100, 0.3);
+            box-shadow: 0 5px 15px rgba(248, 113, 113, 0.4);
+            border: 1px solid rgba(255, 150, 150, 0.3);
         }
 
         /* Floating Elements */
@@ -261,9 +261,9 @@ def load_css():
 
         /* Glow Effect */
         .glow {
-            box-shadow: 0 0 30px rgba(220, 38, 38, 0.6),
-                        0 0 60px rgba(220, 38, 38, 0.4),
-                        0 0 90px rgba(220, 38, 38, 0.2);
+            box-shadow: 0 0 30px rgba(248, 113, 113, 0.6),
+                        0 0 60px rgba(248, 113, 113, 0.4),
+                        0 0 90px rgba(248, 113, 113, 0.2);
         }
 
         /* Custom Scrollbar */
@@ -272,16 +272,16 @@ def load_css():
         }
 
         ::-webkit-scrollbar-track {
-            background: rgba(255, 100, 100, 0.05);
+            background: rgba(255, 150, 150, 0.08);
         }
 
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+            background: linear-gradient(135deg, #EF4444 0%, #F87171 100%);
             border-radius: 5px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(135deg, #B91C1C 0%, #DC2626 100%);
+            background: linear-gradient(135deg, #F87171 0%, #EF4444 100%);
         }
 
         /* Company Links */
@@ -293,7 +293,7 @@ def load_css():
         }
 
         .company-link:hover {
-            text-shadow: 0 0 10px rgba(220, 38, 38, 0.8);
+            text-shadow: 0 0 10px rgba(248, 113, 113, 0.8);
             transform: translateX(3px);
         }
 
@@ -310,7 +310,7 @@ def load_css():
 
         /* Text Styles */
         .text-gradient {
-            background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+            background: linear-gradient(135deg, #EF4444 0%, #F87171 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -328,7 +328,7 @@ def load_css():
             color: white;
             text-align: center;
             padding: 20px 0;
-            border-bottom: 1px solid rgba(255, 100, 100, 0.1);
+            border-bottom: 1px solid rgba(255, 150, 150, 0.15);
             margin-bottom: 20px;
         }
 
@@ -336,7 +336,7 @@ def load_css():
             font-family: 'Space Grotesk', sans-serif;
             font-size: 1.5rem;
             font-weight: 600;
-            background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+            background: linear-gradient(135deg, #EF4444 0%, #F87171 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 5px;
@@ -355,9 +355,9 @@ def load_css():
             right: 20px;
             width: 50px;
             height: 50px;
-            background: rgba(220, 38, 38, 0.1);
+            background: rgba(248, 113, 113, 0.15);
             border-radius: 50%;
-            border: 1px solid rgba(220, 38, 38, 0.2);
+            border: 1px solid rgba(248, 113, 113, 0.25);
             cursor: pointer;
             transition: all 0.3s ease;
             z-index: 1000;
@@ -368,9 +368,9 @@ def load_css():
         }
 
         .easter-egg-trigger:hover {
-            background: rgba(220, 38, 38, 0.2);
+            background: rgba(248, 113, 113, 0.25);
             transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+            box-shadow: 0 0 20px rgba(248, 113, 113, 0.6);
         }
 
         .easter-egg-modal {
@@ -388,15 +388,15 @@ def load_css():
         }
 
         .easter-egg-content {
-            background: linear-gradient(135deg, rgba(44, 10, 10, 0.9) 0%, rgba(92, 26, 26, 0.9) 100%);
+            background: linear-gradient(135deg, rgba(74, 21, 21, 0.9) 0%, rgba(122, 37, 37, 0.9) 100%);
             backdrop-filter: blur(20px);
             border-radius: 20px;
-            border: 2px solid rgba(220, 38, 38, 0.3);
+            border: 2px solid rgba(248, 113, 113, 0.4);
             padding: 40px;
             text-align: center;
             max-width: 500px;
             margin: 20px;
-            box-shadow: 0 20px 40px rgba(220, 38, 38, 0.3);
+            box-shadow: 0 20px 40px rgba(248, 113, 113, 0.4);
         }
 
         @keyframes fadeIn {
@@ -408,7 +408,7 @@ def load_css():
             font-family: 'Space Grotesk', sans-serif;
             font-size: 1.8rem;
             font-weight: 600;
-            background: linear-gradient(135deg, #DC2626 0%, #F87171 50%, #FCA5A5 100%);
+            background: linear-gradient(135deg, #EF4444 0%, #F87171 50%, #FCA5A5 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 20px;
@@ -416,8 +416,8 @@ def load_css():
         }
 
         .close-button {
-            background: rgba(220, 38, 38, 0.2);
-            border: 1px solid rgba(220, 38, 38, 0.3);
+            background: rgba(248, 113, 113, 0.25);
+            border: 1px solid rgba(248, 113, 113, 0.4);
             color: white;
             padding: 10px 20px;
             border-radius: 10px;
@@ -427,7 +427,7 @@ def load_css():
         }
 
         .close-button:hover {
-            background: rgba(220, 38, 38, 0.3);
+            background: rgba(248, 113, 113, 0.35);
             transform: scale(1.05);
         }
     </style>
@@ -666,11 +666,11 @@ elif st.session_state.current_page == 'career':
     st.markdown('<h2 class="section-header">Professional Timeline</h2>', unsafe_allow_html=True)
 
     for i, position in enumerate(positions):
-        color = "#DC2626" if i < 2 else "#B91C1C"
+        color = "#EF4444" if i < 2 else "#F87171"
         st.markdown(f'''
         <div class="achievement-card">
             <div style="display: flex; align-items: start; gap: 20px;">
-                <div style="min-width: 60px; height: 60px; background: linear-gradient(135deg, {color} 0%, #B91C1C 100%); 
+                <div style="min-width: 60px; height: 60px; background: linear-gradient(135deg, {color} 0%, #F87171 100%); 
                             border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; 
                             font-weight: bold; font-size: 1.5rem;">
                     {i + 1}
@@ -952,7 +952,7 @@ elif st.session_state.current_page == 'achievements':
 
     # Impact Metrics
     st.markdown('<div class="glass-card">', unsafe_allow_html=True)
-    st.markdown('<h2 class="section-header">Impact by Numbers</h2>', unsafe_handle_html=True)
+    st.markdown('<h2 class="section-header">Impact by Numbers</h2>', unsafe_allow_html=True)
 
     cols = st.columns(4)
     metrics = [
@@ -993,14 +993,14 @@ elif st.session_state.current_page == 'analytics':
     fig.add_trace(go.Scatter(
         x=years, y=ventures,
         name='Ventures Founded',
-        line=dict(color='#DC2626', width=3),
+        line=dict(color='#EF4444', width=3),
         marker=dict(size=10)
     ))
 
     fig.add_trace(go.Scatter(
         x=years, y=funding,
         name='Funding Raised (K$)',
-        line=dict(color='#B91C1C', width=3),
+        line=dict(color='#F87171', width=3),
         marker=dict(size=10),
         yaxis='y2'
     ))
@@ -1008,7 +1008,7 @@ elif st.session_state.current_page == 'analytics':
     fig.add_trace(go.Scatter(
         x=years, y=followers,
         name='Social Followers (K)',
-        line=dict(color='#F87171', width=3),
+        line=dict(color='#FCA5A5', width=3),
         marker=dict(size=10),
         yaxis='y3'
     ))
@@ -1028,24 +1028,24 @@ elif st.session_state.current_page == 'analytics':
         ),
         yaxis=dict(
             title="Ventures",
-            gridcolor='rgba(255,100,100,0.1)'
+            gridcolor='rgba(255,150,150,0.15)'
         ),
         yaxis2=dict(
             title="Funding (K$)",
             overlaying='y',
             side='right',
-            gridcolor='rgba(255,100,100,0.1)'
+            gridcolor='rgba(255,150,150,0.15)'
         ),
         yaxis3=dict(
             title="Followers (K)",
             overlaying='y',
             side='right',
             position=0.95,
-            gridcolor='rgba(255,100,100,0.1)'
+            gridcolor='rgba(255,150,150,0.15)'
         ),
         xaxis=dict(
             title="Year",
-            gridcolor='rgba(255,100,100,0.1)'
+            gridcolor='rgba(255,150,150,0.15)'
         )
     )
 
@@ -1062,7 +1062,7 @@ elif st.session_state.current_page == 'analytics':
     })
 
     fig2 = px.bar(impact_data, x='Impact Score', y='Category', orientation='h',
-                  color='Impact Score', color_continuous_scale=['#B91C1C', '#DC2626', '#F87171'])
+                  color='Impact Score', color_continuous_scale=['#F87171', '#EF4444', '#FCA5A5'])
 
     fig2.update_layout(
         plot_bgcolor='rgba(0,0,0,0)',
@@ -1070,8 +1070,8 @@ elif st.session_state.current_page == 'analytics':
         font=dict(color='white'),
         height=300,
         showlegend=False,
-        xaxis=dict(gridcolor='rgba(255,100,100,0.1)'),
-        yaxis=dict(gridcolor='rgba(255,100,100,0.1)')
+        xaxis=dict(gridcolor='rgba(255,150,150,0.15)'),
+        yaxis=dict(gridcolor='rgba(255,150,150,0.15)')
     )
 
     st.plotly_chart(fig2, use_container_width=True)
@@ -1079,7 +1079,7 @@ elif st.session_state.current_page == 'analytics':
 
 # Footer
 st.markdown("""
-<div style="margin-top: 60px; padding: 30px 0; text-align: center; border-top: 1px solid rgba(255,100,100,0.1);">
+<div style="margin-top: 60px; padding: 30px 0; text-align: center; border-top: 1px solid rgba(255,150,150,0.15);">
     <p class="text-muted">© 2025 Alidar Kuchukov. Building tomorrow's solutions, one startup at a time.</p>
     <div style="margin-top: 15px;">
         <p class="text-muted" style="font-size: 0.9rem;">
