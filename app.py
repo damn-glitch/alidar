@@ -441,12 +441,7 @@ load_css()
 # Easter Egg Handler
 def show_easter_egg():
     if not st.session_state.easter_egg_unlocked:
-        st.markdown("""
-        <div class="easter-egg-trigger" onclick="document.getElementById('easter-egg-modal').style.display='flex'">
-            🎁
-        </div>
-        """, unsafe_allow_html=True)
-
+        # Hidden easter egg - only triggered by clicking the name
         st.markdown(f"""
         <div id="easter-egg-modal" class="easter-egg-modal" style="display: none;">
             <div class="easter-egg-content">
@@ -480,7 +475,7 @@ def show_easter_egg():
 with st.sidebar:
     st.markdown("""
     <div class="sidebar-header">
-        <div class="sidebar-name">Alidar Kuchukov</div>
+        <div class="sidebar-name sidebar-name-clickable" onclick="document.getElementById('easter-egg-modal').style.display='flex'">Alidar Kuchukov</div>
         <div class="sidebar-title">Portfolio Navigation</div>
     </div>
     """, unsafe_allow_html=True)
@@ -667,6 +662,12 @@ elif st.session_state.current_page == 'career':
 
     for i, position in enumerate(positions):
         color = "#EF4444" if i < 2 else "#F87171"
+        
+        # Build achievements HTML properly
+        achievements_html = ""
+        for achievement in position["achievements"]:
+            achievements_html += f'<span class="skill-tag">{achievement}</span>'
+        
         st.markdown(f'''
         <div class="achievement-card">
             <div style="display: flex; align-items: start; gap: 20px;">
@@ -682,7 +683,7 @@ elif st.session_state.current_page == 'career':
                     <p class="text-muted" style="font-size: 0.9rem;">{position["location"]}</p>
                     <p class="text-white" style="margin: 15px 0;">{position["description"]}</p>
                     <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;">
-                        {"".join([f'<span class="skill-tag">{achievement}</span>' for achievement in position["achievements"]])}
+                        {achievements_html}
                     </div>
                 </div>
             </div>
@@ -722,6 +723,17 @@ elif st.session_state.current_page == 'ventures':
 
     for venture in ventures:
         status_color = "#00ff88" if venture["status"] == "Active" else "#ffa500"
+        
+        # Build metrics HTML properly
+        metrics_html = ""
+        for key, value in venture["metrics"].items():
+            metrics_html += f'<div><p class="text-gradient" style="font-weight: 700; font-size: 1.2rem;">{value}</p><p class="text-muted" style="font-size: 0.9rem;">{key}</p></div>'
+        
+        # Build highlights HTML properly
+        highlights_html = ""
+        for highlight in venture["highlights"]:
+            highlights_html += f'<span class="skill-tag">{highlight}</span>'
+        
         st.markdown(f'''
         <div class="achievement-card">
             <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 20px;">
@@ -741,12 +753,11 @@ elif st.session_state.current_page == 'ventures':
             <p class="text-white" style="margin: 15px 0; line-height: 1.6;">{venture["description"]}</p>
 
             <div style="display: flex; gap: 30px; margin: 20px 0;">
-                {"".join([f'<div><p class="text-gradient" style="font-weight: 700; font-size: 1.2rem;">{value}</p><p class="text-muted" style="font-size: 0.9rem;">{key}</p></div>'
-                          for key, value in venture["metrics"].items()])}
+                {metrics_html}
             </div>
 
             <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px;">
-                {"".join([f'<span class="skill-tag">{highlight}</span>' for highlight in venture["highlights"]])}
+                {highlights_html}
             </div>
         </div>
         ''', unsafe_allow_html=True)
@@ -770,6 +781,11 @@ elif st.session_state.current_page == 'ventures':
     ]
 
     for venture in past_ventures:
+        # Build impact HTML properly
+        impact_html = ""
+        for impact in venture["impact"]:
+            impact_html += f'<span class="skill-tag">{impact}</span>'
+            
         st.markdown(f'''
         <div class="achievement-card">
             <h3 class="text-white">{venture["name"]}</h3>
@@ -777,7 +793,7 @@ elif st.session_state.current_page == 'ventures':
             <p class="text-muted">{venture["period"]} • {venture["funding"]}</p>
             <p class="text-white" style="margin: 15px 0;">{venture["description"]}</p>
             <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;">
-                {"".join([f'<span class="skill-tag">{impact}</span>' for impact in venture["impact"]])}
+                {impact_html}
             </div>
         </div>
         ''', unsafe_allow_html=True)
@@ -871,6 +887,11 @@ elif st.session_state.current_page == 'web3':
     cols = st.columns(2)
     for i, category in enumerate(skills_categories):
         with cols[i % 2]:
+            # Build skills HTML properly
+            skills_html = ""
+            for skill in category["skills"]:
+                skills_html += f'<span class="skill-tag">{skill}</span>'
+                
             st.markdown(f'''
             <div class="achievement-card">
                 <div style="text-align: center; margin-bottom: 20px;">
@@ -878,7 +899,7 @@ elif st.session_state.current_page == 'web3':
                     <h3 class="text-gradient">{category["category"]}</h3>
                 </div>
                 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                    {"".join([f'<span class="skill-tag">{skill}</span>' for skill in category["skills"]])}
+                    {skills_html}
                 </div>
             </div>
             ''', unsafe_allow_html=True)
