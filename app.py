@@ -1,4 +1,43 @@
-import streamlit as st
+# Show Easter Egg if unlocked
+    if st.session_state.easter_egg_unlocked:
+        st.markdown('<div class="glass-card" style="margin-top: 30px;">', unsafe_allow_html=True)
+        st.markdown("""
+        <div style="text-align: center; padding: 20px;">
+            <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; 
+                       font-weight: 600; background: linear-gradient(135deg, #EF4444 0%, #F87171 50%, #FCA5A5 100%);
+                       -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
+                       margin-bottom: 20px;">
+                🎉 Happy Birthday, Brother! 🎉
+            </h2>
+            <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; margin: 20px 0;">
+                From your brother Alisher Beisembekov
+            </p>
+            <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.8; margin: 20px 0;">
+                Alidar, my brother! This website is my birthday gift to you. 
+                You've always been more than a friend - you're family to me. 
+                Your vision, passion, and unstoppable drive inspire everyone around you.
+                <br><br>
+                From dropping out of high school to pursue your dreams, to building 
+                incredible companies and changing lives through your work - you've 
+                shown what true leadership looks like.
+                <br><br>
+                Keep building the future, brother. The world needs more visionaries like you! 🚀
+            </p>
+            <p style="background: linear-gradient(135deg, #EF4444 0%, #F87171 100%);
+                      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+                      font-weight: 600; margin-top: 20px;">
+                With love and respect,<br>
+                Alisher ❤️
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        col1, col2, col3 = st.columns([1,1,1])
+        with col2:
+            if st.button("Close", key="close_easter_egg"):
+                st.session_state.easter_egg_unlocked = False
+        
+        st.markdown('</div>', unsafe_allow_html=True)import streamlit as st
 from datetime import datetime
 import plotly.graph_objects as go
 import plotly.express as px
@@ -440,42 +479,17 @@ load_css()
 
 # Easter Egg Handler
 def show_easter_egg():
-    if not st.session_state.easter_egg_unlocked:
-        # Hidden easter egg - only triggered by clicking the name
-        st.markdown(f"""
-        <div id="easter-egg-modal" class="easter-egg-modal" style="display: none;">
-            <div class="easter-egg-content">
-                <div class="birthday-message">🎉 Happy Birthday, Brother! 🎉</div>
-                <p class="text-white" style="font-size: 1.2rem; margin: 20px 0;">
-                    From your brother Alisher Beisembekov
-                </p>
-                <p class="text-white" style="line-height: 1.8;">
-                    Alidar, my brother! This website is my birthday gift to you. 
-                    You've always been more than a friend - you're family to me. 
-                    Your vision, passion, and unstoppable drive inspire everyone around you.
-                    <br><br>
-                    From dropping out of high school to pursue your dreams, to building 
-                    incredible companies and changing lives through your work - you've 
-                    shown what true leadership looks like.
-                    <br><br>
-                    Keep building the future, brother. The world needs more visionaries like you! 🚀
-                </p>
-                <p class="text-gradient" style="font-weight: 600; margin-top: 20px;">
-                    With love and respect,<br>
-                    Alisher ❤️
-                </p>
-                <button class="close-button" onclick="document.getElementById('easter-egg-modal').style.display='none'">
-                    Close
-                </button>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+    # Create a hidden button in the sidebar
+    with st.sidebar:
+        st.markdown("---")
+        if st.button("🎁", help="Special surprise from a brother!", key="easter_egg_btn"):
+            st.session_state.easter_egg_unlocked = True
 
 # Sidebar Navigation
 with st.sidebar:
     st.markdown("""
     <div class="sidebar-header">
-        <div class="sidebar-name sidebar-name-clickable" onclick="document.getElementById('easter-egg-modal').style.display='flex'">Alidar Kuchukov</div>
+        <div class="sidebar-name">Alidar Kuchukov</div>
         <div class="sidebar-title">Portfolio Navigation</div>
     </div>
     """, unsafe_allow_html=True)
@@ -503,11 +517,55 @@ with st.sidebar:
             <a href="#" style="color: rgba(255, 255, 255, 0.7); text-decoration: none;">📱</a>
             <a href="#" style="color: rgba(255, 255, 255, 0.7); text-decoration: none;">🌐</a>
         </div>
+        <p style="color: rgba(255, 255, 255, 0.4); font-size: 0.8rem; margin-top: 15px;">
+            Look for something special below...
+        </p>
     </div>
     """, unsafe_allow_html=True)
 
 # Show Easter Egg
 show_easter_egg()
+
+# Show Easter Egg if unlocked
+if st.session_state.easter_egg_unlocked:
+    st.markdown('<div class="glass-card" style="margin-top: 30px;">', unsafe_allow_html=True)
+    st.markdown("""
+    <div style="text-align: center; padding: 20px;">
+        <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; 
+                   font-weight: 600; background: linear-gradient(135deg, #EF4444 0%, #F87171 50%, #FCA5A5 100%);
+                   -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
+                   margin-bottom: 20px;">
+            🎉 Happy Birthday, Brother! 🎉
+        </h2>
+        <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; margin: 20px 0;">
+            From your brother Alisher Beisembekov
+        </p>
+        <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.8; margin: 20px 0;">
+            Alidar, my brother! This website is my birthday gift to you. 
+            You've always been more than a friend - you're family to me. 
+            Your vision, passion, and unstoppable drive inspire everyone around you.
+            <br><br>
+            From dropping out of high school to pursue your dreams, to building 
+            incredible companies and changing lives through your work - you've 
+            shown what true leadership looks like.
+            <br><br>
+            Keep building the future, brother. The world needs more visionaries like you! 🚀
+        </p>
+        <p style="background: linear-gradient(135deg, #EF4444 0%, #F87171 100%);
+                  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+                  font-weight: 600; margin-top: 20px;">
+            With love and respect,<br>
+            Alisher ❤️
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    col1, col2, col3 = st.columns([1,1,1])
+    with col2:
+        if st.button("Close", key="close_easter_egg"):
+            st.session_state.easter_egg_unlocked = False
+    
+    st.markdown('</div>', unsafe_allow_html=True)
 
 # Page content based on selection
 if st.session_state.current_page == 'home':
@@ -596,7 +654,7 @@ if st.session_state.current_page == 'home':
             st.markdown(f'<p class="text-white" style="font-weight: 600; margin-top: 20px;">{category}</p>',
                         unsafe_allow_html=True)
             for skill in skills:
-                st.markdown(f'<div class="skill-tag">{skill}</div>', unsafe_allow_html=True)
+                st.markdown(f'<span class="skill-tag">{skill}</span>', unsafe_allow_html=True)
 
         # Background
         st.markdown('<h3 class="text-gradient" style="margin-top: 30px;">Background</h3>', unsafe_allow_html=True)
@@ -663,11 +721,6 @@ elif st.session_state.current_page == 'career':
     for i, position in enumerate(positions):
         color = "#EF4444" if i < 2 else "#F87171"
         
-        # Build achievements HTML properly
-        achievements_html = ""
-        for achievement in position["achievements"]:
-            achievements_html += f'<span class="skill-tag">{achievement}</span>'
-        
         st.markdown(f'''
         <div class="achievement-card">
             <div style="display: flex; align-items: start; gap: 20px;">
@@ -682,13 +735,16 @@ elif st.session_state.current_page == 'career':
                     <p class="text-muted">{position["period"]}</p>
                     <p class="text-muted" style="font-size: 0.9rem;">{position["location"]}</p>
                     <p class="text-white" style="margin: 15px 0;">{position["description"]}</p>
-                    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;">
-                        {achievements_html}
-                    </div>
                 </div>
             </div>
         </div>
         ''', unsafe_allow_html=True)
+        
+        # Achievement tags
+        st.markdown('<div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 15px 0;">', unsafe_allow_html=True)
+        for achievement in position["achievements"]:
+            st.markdown(f'<span class="skill-tag">{achievement}</span>', unsafe_allow_html=True)
+        st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown('</div>', unsafe_allow_html=True)
 
@@ -724,16 +780,6 @@ elif st.session_state.current_page == 'ventures':
     for venture in ventures:
         status_color = "#00ff88" if venture["status"] == "Active" else "#ffa500"
         
-        # Build metrics HTML properly
-        metrics_html = ""
-        for key, value in venture["metrics"].items():
-            metrics_html += f'<div><p class="text-gradient" style="font-weight: 700; font-size: 1.2rem;">{value}</p><p class="text-muted" style="font-size: 0.9rem;">{key}</p></div>'
-        
-        # Build highlights HTML properly
-        highlights_html = ""
-        for highlight in venture["highlights"]:
-            highlights_html += f'<span class="skill-tag">{highlight}</span>'
-        
         st.markdown(f'''
         <div class="achievement-card">
             <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 20px;">
@@ -751,16 +797,27 @@ elif st.session_state.current_page == 'ventures':
             </div>
             
             <p class="text-white" style="margin: 15px 0; line-height: 1.6;">{venture["description"]}</p>
-
-            <div style="display: flex; gap: 30px; margin: 20px 0;">
-                {metrics_html}
-            </div>
-
-            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px;">
-                {highlights_html}
-            </div>
         </div>
         ''', unsafe_allow_html=True)
+        
+        # Metrics section
+        st.markdown('<div style="display: flex; gap: 30px; margin: 20px 0;">', unsafe_allow_html=True)
+        cols = st.columns(len(venture["metrics"]))
+        for i, (key, value) in enumerate(venture["metrics"].items()):
+            with cols[i]:
+                st.markdown(f'''
+                <div style="text-align: center;">
+                    <p class="text-gradient" style="font-weight: 700; font-size: 1.2rem; margin: 0;">{value}</p>
+                    <p class="text-muted" style="font-size: 0.9rem; margin: 0;">{key}</p>
+                </div>
+                ''', unsafe_allow_html=True)
+        st.markdown('</div>', unsafe_allow_html=True)
+        
+        # Highlights section  
+        st.markdown('<div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0;">', unsafe_allow_html=True)
+        for highlight in venture["highlights"]:
+            st.markdown(f'<span class="skill-tag">{highlight}</span>', unsafe_allow_html=True)
+        st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown('</div>', unsafe_allow_html=True)
 
@@ -781,22 +838,20 @@ elif st.session_state.current_page == 'ventures':
     ]
 
     for venture in past_ventures:
-        # Build impact HTML properly
-        impact_html = ""
-        for impact in venture["impact"]:
-            impact_html += f'<span class="skill-tag">{impact}</span>'
-            
         st.markdown(f'''
         <div class="achievement-card">
             <h3 class="text-white">{venture["name"]}</h3>
             <p class="text-gradient" style="font-weight: 600; margin: 10px 0;">{venture["category"]}</p>
             <p class="text-muted">{venture["period"]} • {venture["funding"]}</p>
             <p class="text-white" style="margin: 15px 0;">{venture["description"]}</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;">
-                {impact_html}
-            </div>
         </div>
         ''', unsafe_allow_html=True)
+        
+        # Impact tags
+        st.markdown('<div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;">', unsafe_allow_html=True)
+        for impact in venture["impact"]:
+            st.markdown(f'<span class="skill-tag">{impact}</span>', unsafe_allow_html=True)
+        st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown('</div>', unsafe_allow_html=True)
 
@@ -887,22 +942,18 @@ elif st.session_state.current_page == 'web3':
     cols = st.columns(2)
     for i, category in enumerate(skills_categories):
         with cols[i % 2]:
-            # Build skills HTML properly
-            skills_html = ""
-            for skill in category["skills"]:
-                skills_html += f'<span class="skill-tag">{skill}</span>'
-                
             st.markdown(f'''
             <div class="achievement-card">
                 <div style="text-align: center; margin-bottom: 20px;">
                     <div style="font-size: 3rem;">{category["icon"]}</div>
                     <h3 class="text-gradient">{category["category"]}</h3>
                 </div>
-                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                    {skills_html}
-                </div>
             </div>
             ''', unsafe_allow_html=True)
+            
+            # Skills tags
+            for skill in category["skills"]:
+                st.markdown(f'<span class="skill-tag">{skill}</span>', unsafe_allow_html=True)
 
     st.markdown('</div>', unsafe_allow_html=True)
 
