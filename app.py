@@ -795,8 +795,9 @@ elif st.session_state.current_page == 'ventures':
                     <p class="text-muted" style="margin-top: 5px;">{venture["funding"]}</p>
                 </div>
             </div>
-            
-            <p class="text-white" style="margin: 15px 0; line-height: 1.6;">{venture["description"]}</p>
+            <div style="text-align: center;">
+                <p class="text-white" style="margin: 15px 0; line-height: 1.6;">{venture["description"]}</p>
+            </div>
         </div>
         ''', unsafe_allow_html=True)
         
