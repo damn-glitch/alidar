@@ -1,3 +1,22 @@
+import streamlit as st
+from datetime import datetime
+import plotly.graph_objects as go
+import plotly.express as px
+import pandas as pd
+
+# Page Configuration
+st.set_page_config(
+    page_title="Alidar Kuchukov | Visionary Entrepreneur & Web3 Pioneer",
+    page_icon="🚀",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+# Initialize session state
+if 'current_page' not in st.session_state:
+    st.session_state.current_page = 'home'
+if 'easter_egg_unlocked' not in st.session_state:
+    st.session_state.easter_egg_unlocked = False
 # Show Easter Egg if unlocked
     if st.session_state.easter_egg_unlocked:
         st.markdown('<div class="glass-card" style="margin-top: 30px;">', unsafe_allow_html=True)
@@ -37,26 +56,7 @@
             if st.button("Close", key="close_easter_egg"):
                 st.session_state.easter_egg_unlocked = False
         
-        st.markdown('</div>', unsafe_allow_html=True)import streamlit as st
-from datetime import datetime
-import plotly.graph_objects as go
-import plotly.express as px
-import pandas as pd
-
-# Page Configuration
-st.set_page_config(
-    page_title="Alidar Kuchukov | Visionary Entrepreneur & Web3 Pioneer",
-    page_icon="🚀",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
-
-# Initialize session state
-if 'current_page' not in st.session_state:
-    st.session_state.current_page = 'home'
-if 'easter_egg_unlocked' not in st.session_state:
-    st.session_state.easter_egg_unlocked = False
-
+        st.markdown('</div>', unsafe_allow_html=True)
 # Advanced Red-themed CSS Design
 def load_css():
     st.markdown("""
